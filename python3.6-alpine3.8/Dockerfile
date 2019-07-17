@@ -4,6 +4,10 @@ LABEL maintainer="Sebastian Ramirez <tiangolo@gmail.com>"
 
 RUN pip install flask
 
+# added to support our OIDC app, and F5 SDK
+RUN pip install flask-oidc
+RUN pip install f5-sdk
+
 # URL under which static (not modified by Python) files will be requested
 # They will be served by Nginx directly, without being handled by uWSGI
 ENV STATIC_URL /static
